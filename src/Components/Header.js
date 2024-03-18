@@ -16,8 +16,23 @@ const Header = () => {
   let dispatch = useDispatch();
   let currentDisplay = useSelector(selectDisplay);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    // Using info from API
+    axios
+      .get(`https://restcountries.com/v3.1/name/${input}`)
+      .then((res) => {
+        console.log(res.data);
+        dispatch(deleteDisplayCountry());
+        dispatch(deletePotentialCountries());
+        dispatch(setPotentialCountries(res.data));
+      })
+      .catch((err) => {
+        alert("No countries found that match your search!");
+      });
+  };
+
   return (
-    // header
     <div className="header">
       <div className="home">
         <BsFillFlagFill style={{ marginRight: "10px" }} fontSize="1.6em" />
@@ -25,32 +40,16 @@ const Header = () => {
           {currentDisplay && currentDisplay.name.common}
         </h3>
       </div>
-      <div className="country-input">
+      {/* Country to search */}
+      <form onSubmit={handleSearch} className="country-input">
         <input
           onChange={(e) => {
             setInput(e.target.value);
           }}
         />
-        <button
-          onClick={() => {
-            axios
-              // getting potential countries from query
-              .get(`https://restcountries.com/v3.1/name/${input}`)
-              .then((res) => {
-                console.log(res.data);
-                dispatch(deleteDisplayCountry());
-                dispatch(deletePotentialCountries());
-                dispatch(setPotentialCountries(res.data));
-              })
-              // returning if empty box
-              .catch((err) => {
-                alert("No countries found that match your search!");
-              });
-          }}
-        >
-          Search
-        </button>
-      </div>
+        {/* Submit to initiate Search */}
+        <button type="submit">Search</button>
+      </form>
     </div>
   );
 };
