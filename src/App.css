@@ -11,20 +11,25 @@
     Globals 
     -----------------*/
 :root {
-    --granite-gray: #656369ff;
-    --cerulean-crayola: #39a5cfff;
-    --aquamarine: #90ffcbff;
-    --plum-web: #f6b0e9ff;
-    --magnolia: #f7f0f5ff;
-    padding: 0;
-    margin: 0;
+  --granite-gray: #656369ff;
+  --cerulean-crayola: #39a5cfff;
+  --aquamarine: #90ffcbff;
+  --plum-web: #f6b0e9ff;
+  --magnolia: #f7f0f5ff;
+  padding: 0;
+  margin: 0;
 }
 
 .App {
-    background-color: var(--granite-gray);
-    min-height: 100vh;
-    text-align: center;
-    color: var(--magnolia);
+  background-color: var(--granite-gray);
+  min-height: 100vh;
+  text-align: center;
+  color: var(--magnolia);
+  /* Removing Selectability */
+  --webkit-user-select: none;
+  --moz-user-select: none;
+  --ms-user-select: none;
+  user-select: none;
 }
 
 /*  -----------------
@@ -33,18 +38,18 @@
 h1,
 h2,
 h3 {
-    margin: 0;
+  margin: 0;
 }
 
 h1 {
-    font-size: 45px;
+  font-size: 45px;
 }
 h2 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 h3 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 /*  -----------------
@@ -53,27 +58,27 @@ h3 {
 
 button,
 input {
-    min-height: 25px;
-    border: none;
-    border-radius: 5px;
+  min-height: 25px;
+  border: none;
+  border-radius: 5px;
 }
 
 button {
-    background-color: var(--aquamarine);
-    cursor: pointer;
-    font-size: 1em;
+  background-color: var(--aquamarine);
+  cursor: pointer;
+  font-size: 1em;
 }
 
 input {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 img {
-    max-width: 30vw;
+  max-width: 30vw;
 }
 
 td {
-    text-align: left;
+  text-align: left;
 }
 
 /*  -----------------
@@ -81,9 +86,9 @@ td {
     -----------------*/
 
 .stack {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*  -----------------
@@ -91,12 +96,12 @@ td {
     -----------------*/
 
 @keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*  -----------------
@@ -104,71 +109,71 @@ td {
     -----------------*/
 
 .header {
-    background-color: var(--cerulean-crayola);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10vw;
-    min-height: 40px;
-    color: var(--aquamarine);
-    margin-bottom: 20px;
+  background-color: var(--cerulean-crayola);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10vw;
+  min-height: 40px;
+  color: var(--aquamarine);
+  margin-bottom: 20px;
 }
 
 .country-input {
-    color: var(--aquamarine);
+  color: var(--aquamarine);
 }
 
 .home {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .tab-select {
-    width: 50vw;
-    min-width: 300px;
-    max-width: 500px;
-    display: flex;
-    justify-content: space-between;
+  width: 50vw;
+  min-width: 300px;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .overview-table {
-    font-size: 20px;
-    margin: 15px 0;
+  font-size: 20px;
+  margin: 15px 0;
 }
 .country-option {
-    cursor: pointer;
-    margin: 3px 0;
+  cursor: pointer;
+  margin: 3px 0;
 }
 .country-option:hover {
-    color: var(--plum-web);
+  color: var(--plum-web);
 }
 .symbols {
-    display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    margin-top: 25px;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  margin-top: 25px;
 }
 
 .loading-modal {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .loading-background {
-    position: absolute;
-    opacity: 0.85;
-    height: 100%;
-    width: 100%;
-    background-color: black;
+  position: absolute;
+  opacity: 0.85;
+  height: 100%;
+  width: 100%;
+  background-color: black;
 }
 .loader {
-    border: 1vw solid var(--magnolia);
-    border-top: 1vw solid var(--cerulean-crayola); /* Blue */
-    border-radius: 50%;
-    width: 3vw;
-    height: 3vw;
-    animation: spin 0.8s linear infinite;
+  border: 1vw solid var(--magnolia);
+  border-top: 1vw solid var(--cerulean-crayola); /* Blue */
+  border-radius: 50%;
+  width: 3vw;
+  height: 3vw;
+  animation: spin 0.8s linear infinite;
 }
